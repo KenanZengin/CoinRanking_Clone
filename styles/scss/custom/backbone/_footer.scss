@@ -1,0 +1,231 @@
+.footer{
+    padding-top: 50px;
+    border-top:1px solid $border-clr;
+    &-partner-block,&-blocks{
+        padding: 45px 190px;
+        margin: 0 auto;
+        background-color: $bg-clr-2;
+    }
+    &-partner-block{
+        border-bottom: 1px solid $border-clr;
+        @include BootstrapMaxWidthResponsive(hd){
+            padding: 45px 150px;
+        }
+        @include BootstrapMaxWidthResponsive(lg){
+            padding: 45px 110px;
+            
+        }
+        .partner-list{
+            &-title{
+                color: $text-clr-2;
+                font-size: 0.95rem;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+            &-list{
+                display: grid;
+                grid-template-rows: repeat(3,auto);
+                grid-auto-flow: column;
+                grid-row-gap: 12px;
+                grid-column-gap: 18px;
+                overflow: hidden;
+                @include BootstrapMaxWidthResponsive(hd){
+                    grid-template-rows: repeat(4,auto);
+                    font-size: 1rem;
+                    grid-column-gap: 10px;
+                }
+
+                @include BootstrapMaxWidthResponsive(xl){
+                    grid-column-gap: 5px;
+                   
+                }
+
+                @include BootstrapMaxWidthResponsive(sm){
+                    grid-template-rows: repeat(8,auto);       
+                }
+
+                @include BootstrapMaxWidthResponsive(xs){
+                    grid-template-rows: repeat(12,auto);
+                }
+                .list-item:not(:last-child,:nth-child(22)){
+                    padding-right: 68px;
+                    @include BootstrapMaxWidthResponsive(hd){
+                        padding-right: 30px;
+                    }
+                    @include BootstrapMaxWidthResponsive(xl){
+                        padding-right: 5px;
+                    }
+                    
+                }
+                .list-item{
+                    display: flex;
+                    align-items: center;
+                    @include BootstrapMaxWidthResponsive(xl){
+                        width: 40px;
+                        max-width: 40px;
+                    }
+                    .list-name{
+                        padding-left: 10px;
+                        font-weight: bold;
+                        color: $text-clr-2;
+                        font-size: 0.8125rem;
+                        white-space: nowrap;
+                        @include BootstrapMaxWidthResponsive(xl){
+                           display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-blocks{
+        padding-bottom: 0 !important;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include BootstrapMaxWidthResponsive(md){
+           justify-content: normal;
+        }
+        @include BootstrapMaxWidthResponsive(sm){
+            justify-content: flex-start;
+         }
+        @include BootstrapMaxWidthResponsive(hd){
+            padding: 45px 120px;
+        }
+        @include BootstrapMaxWidthResponsive(lg){
+            padding: 45px 75px;
+            
+        }
+        @include BootstrapMaxWidthResponsive(md){
+            padding: 45px 10px;
+            
+        }
+        &-item{
+            @include BootstrapMaxWidthResponsive(md){
+                max-width: 220px;
+                width: 220px;
+                margin-bottom: 25px;
+            }
+            .item-title{
+                display: inline-block;
+                color: $text-clr-2;
+                font-weight: bold;
+                font-size: 0.95rem;
+                margin-bottom: 20px;
+
+            }
+            .item-lists{
+                .item-list:first-of-type{
+                    .accordion{
+                        .accordion-collapse{
+                            width: 380px;
+                            left: -99px;
+                            @include BootstrapMaxWidthResponsive(xl){
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+                .item-list:last-of-type{
+                    .accordion{
+                        .accordion-collapse{
+                            width: 240px;
+                            left: -40px;
+                            @include BootstrapMaxWidthResponsive(xl){
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+                .item-list{
+                    margin-bottom: 20px;
+                    .accordion{
+                        .accordion-header{
+                            button{
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                width: 163px;
+                                padding: 6px 10px 6px 19px;
+                                border-radius: 4px;
+                                background-color:$bg-clr-15;
+                                font-size: 0.875rem;
+                                font-weight: bold;
+                                color: $text-clr-2;
+                                svg{
+                                    color:$text-clr-2 ;
+                                }
+                            }
+                        }
+                        .accordion-collapse{
+                            
+                            left: -153px;
+                            top: 45px;
+                            .accordion-body{
+                                input{
+                                    border-radius: 0;
+                                    font-size: 0.8125rem;
+                                    font-weight: 500;
+                                    color: $text-clr-2;
+                                    line-height: 1.4;
+                                    height: 62px;
+                                    width: 100%;
+                                    padding: 2px 62px 0;
+                                    display: block;
+                                    border: none;
+                                    &::placeholder{
+                                        color: $text-clr-3 ;
+                                    }
+                                }
+                                > svg{
+                                    position: absolute;
+                                    top: 24px;
+                                    left: 35px;
+                                    color: $text-clr-2;
+                                }
+                                .search-blocks{
+                                    .search-title{
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+                                        width: 100%;
+                                        font-size: 0.625rem;
+                                        padding: 0 29px;
+                                    }
+                                    .search-results{
+                                        width: 100%;
+                                        padding-top: 9px;
+                                        .result-item:first-child{
+                                            font-weight: bold;
+                                        }
+                                        .result-item{
+                                            width: 100%;
+                                            padding: 8px 36px;
+                                            color: $text-clr-3;
+                                            font-size: 0.8125rem;
+                                            font-weight: 500;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .item{
+                        a{
+                            display: inline-block;
+                            color: $text-clr-2;
+                            margin-bottom: 15px;
+                            font-size: 0.8125rem;
+                            font-weight: 500;
+                            svg{
+                                color: $bg-clr-11;
+                                margin-right: 7px;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}

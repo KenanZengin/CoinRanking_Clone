@@ -1,0 +1,858 @@
+.coinlist{  
+    @include BootstrapMaxWidthResponsive(md){
+        margin-top: 45px;
+    } 
+    .stats{     
+        max-width: 1292px;
+        margin: 0 auto;
+        padding: 0 52px;
+        &-head{
+            .title{
+                color: $text-clr-2;
+                font-weight: bold;
+                font-size: 1.625rem;
+                @include BootstrapMaxWidthResponsive(md){
+                    font-size: 1.375rem;  
+                } 
+            }
+            .description{
+                color: $text-clr-3;
+                font-size: 0.875rem;
+                margin: 10px 0 40px;
+                line-height: 1.6;
+                font-weight: 500;
+            }
+        }
+        &-bar{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: start;
+            margin-bottom: 45px;
+            min-width: 880px;
+            @include BootstrapMaxWidthResponsive(xs){
+                position: relative;
+                left: -44px;
+            }  
+            &-items{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                .stat-bar-item:not(:first-child){
+                    padding-left: 18px;
+                }
+                .stat-bar-item:last-of-type{
+                    img{
+                        visibility: hidden;
+                    }
+                }
+                .stat-bar-item{      
+                    @include BootstrapMaxWidthResponsive(sm){
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        min-height: 37px;
+                        border-right: 1px solid $border-clr !important;
+                        padding-right: 5px;
+                    }
+                    &:last-child{
+                        @include BootstrapMaxWidthResponsive(sm){
+                            border: 0 !important;
+                        }  
+                    }  
+                    &:has(.item-head,.item-value):not(:last-child){
+                        border-right: 1px solid $border-clr;
+                        @include BootstrapMaxWidthResponsive(sm){
+                            border: 0;
+                        }  
+                    }      
+                    .item-head{
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        padding: 0 18px 2px 0;
+                        @include BootstrapMaxWidthResponsive(sm){
+                            padding: 0 3px 0 0 ;
+                            margin-bottom: 10px;
+                        } 
+                        span{
+                            color:$text-clr-3;
+                            font-weight: 500;
+                            font-size: 0.75rem;
+                            @include BootstrapMaxWidthResponsive(sm){
+                                font-size: 0.65rem;
+                            }    
+                            margin-right: 8px;
+                        }             
+                        img{  
+                            margin-top: 1px;
+                            @include BootstrapMaxWidthResponsive(sm){
+                                display: none;
+                            } 
+                        }
+                    }
+                    .item-value{
+                       width: 100%;
+                       padding: 6px 18px 2px 0;
+                       @include BootstrapMaxWidthResponsive(sm){
+                            padding: 0 3px 0 0;
+                        }    
+                       abbr,p{
+                        margin-right: 5px;
+                        color: $text-clr-3;
+                        font-weight: bold;
+                        font-size: 0.875rem;
+                        text-decoration: none;
+                        @include BootstrapMaxWidthResponsive(sm){
+                            font-size: 0.75rem;
+                        }  
+                       }
+                       .change,.w-percentage,.l-percentage{                       
+                        font-weight: bold;
+                        font-size: 0.75rem;
+                        margin-left: 2px;
+                        @include BootstrapMaxWidthResponsive(sm){
+                            font-size: 0.65rem;
+                        }  
+                       }
+                       .change{
+                        color: $bg-clr-6;
+                       }
+                       .w-percentage,.l-percentage{
+                        color: $text-clr-2;
+                       }
+                       .w-vs-l{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        
+                        .w-l-bar{
+                            height:4px;
+                            display: flex;
+                            align-items: center;
+                            margin: 0 7px;
+                            border-radius: 4px;
+                            width: 100%;
+                            gap: 2px;
+                            .w-bar{
+                                width: 60%;
+                                background-color: $bg-clr-5;
+                                height: 4px;
+                                border-top-left-radius: 4px;
+                                border-bottom-left-radius:4px;
+                            }
+                            .l-bar{
+                                width: 40%;
+                                background-color: $bg-clr-6;
+                                height: 4px;
+                                border-top-right-radius: 4px;
+                                border-bottom-right-radius:4px ;
+                            }
+                        }
+                       }
+                    }
+                }
+            }
+        }
+        &-types{
+            display: flex;
+            align-items: center;
+
+            &:has(input:not(:checked)){ 
+                --dis-d:none;
+                --dis-a:block;
+            }
+           
+            &:has(input:checked){ 
+                --dis-d:block;
+                --dis-a:none;
+            }
+            .search-coin{
+                display: flex;
+                align-items: center;
+                padding-right: 6px;
+                padding-top: 1px;
+                height: 26px;
+                & > label{
+                    cursor: pointer;
+                }
+                .state{
+                    display: var(--dis-d);
+                    margin-left: 10px;
+                    padding-bottom: 2px;
+                    position: relative;
+                    input[type=text]{
+                        width: 370px;
+                        color: $text-clr-3;
+                        &::placeholder{
+                            color: $text-clr-3 ;
+                        }
+                    }    
+                } 
+                .closesearch{   
+                    padding-top: 1px;                 
+                    .closed{
+                        display: var(--dis-d);     
+                        cursor: pointer;                  
+                        &::before{
+                            content: "+";
+                            height: 26px;
+                            font-size: 36px;
+                            font-weight: 300;
+                            display: inline-block;
+                            transform: rotate(45deg);
+                            color: $bg-clr-10;
+                        }      
+                    }
+                }
+                input[type=checkbox]{
+                    display: none;      
+                }
+            }
+            .rank-list{
+                padding: 0 6px;
+                .accordion-header{
+                    margin-bottom: 1.4px;
+                }
+            }
+            svg{
+                color: $text-clr-3
+            }
+            .options{
+                padding-left: 7px;
+                &-items{
+                    display: flex;
+                    align-items: center;
+                   
+                    .option-item{
+                       
+                        @include BootstrapMaxWidthResponsive(lg){
+                            &:nth-child(13),&:nth-child(12){
+                                display: none;
+                            }                           
+                        }
+                        @include BootstrapMaxWidthResponsive(md){
+                            &:nth-child(11),&:nth-child(10),&:nth-child(9){
+                                display: none;
+                            }                           
+                        }
+                        @include BootstrapMaxWidthResponsive(sm){
+                            &:nth-child(6),&:nth-child(8),&:nth-child(7){
+                                display: none;
+                            }                           
+                        }
+                        @include BootstrapMaxWidthResponsive(xs){
+                            &:nth-child(5),&:nth-child(4){
+                                display: none;
+                            }                           
+                        }
+                       
+                    }
+                    .option-item:first-child{
+                        background-color: $bg-clr-9;
+                        a{
+                            color: $bg-clr-3 !important;
+                        }
+                    }
+                    .option-item{  
+                        border-radius: 3px;
+                        margin-right: 2px;
+                        a{
+                            display: inline-block;
+                            color:$text-clr-3;
+                            font-weight: bold;
+                            font-size: 0.75rem;
+                            padding: 7px 9px;                   
+                            border-radius: 3px;
+                            &:hover{
+                                background-color: $bg-clr-9;
+                                color: $bg-clr-3 !important;
+                            }
+                        }                     
+                    }
+                    
+                }
+            }
+            .rank-list,.more{
+                .accordion-collapse{
+                    width: 210px;
+                    top: 35px;
+                    left: -76px;
+                    .info{
+                        color: $text-clr-3;
+                        font-size: 0.6875rem;
+                        font-weight: bold;
+                        padding: 18px 33px 0;
+                    }
+                    .items{
+                        padding: 10px 0 16px;
+                        .item{
+                            padding: 7.5px 33px;
+                            font-size: 0.8125rem;
+                            color: $text-clr-3;
+                            font-weight: 500;
+                            &:hover{
+                                background-color: $bg-clr-8;
+                                cursor: pointer;
+                            }                       
+                        }
+                        .item:first-child{
+                            font-weight: bold;
+                        }
+                        
+                    }
+                }
+            }
+            .more{
+                .accordion{
+                    .accordion-header{
+                       button{
+                        color:$text-clr-3;
+                        font-weight: bold;
+                        font-size: 0.75rem;
+                        padding: 7px 9px;                   
+                        border-radius: 3px;
+                        &:hover{
+                            background-color: $bg-clr-9;
+                            color: $bg-clr-3 !important;
+                        }
+                        }
+                    }
+                }
+            }
+            .rank-list,.options{
+                display: var(--dis-a);   
+            }
+        }
+    }
+    .table{
+        margin-top: 16px;
+        &-head{
+            border-top: 1px solid $border-clr;
+            border-bottom: 1px solid $border-clr;
+            &-titles{
+                display: flex;
+                align-items: center;
+                padding: 0 max((100% - 1200px)/2,48px);
+                @include BootstrapMaxWidthResponsive(xm){
+                    padding: 0 16px;
+                }
+                .title:first-child{
+                    width: 37.5%;
+                    @include BootstrapMaxWidthResponsive(xs){    
+                        width: 50%;   
+                    }
+                }
+                .title:nth-child(2),.title:nth-child(3){
+                    width: 25%;
+                }
+                .title:last-child{
+                    width: 12.5%;
+                    text-align: end;
+                    @include BootstrapMaxWidthResponsive(xs){    
+                        width: 25%;   
+                    }
+                }
+                .title:not(:last-child){
+                    text-align: start;
+                }
+                .title{
+                    @include BootstrapMaxWidthResponsive(xs){
+                        &:nth-child(3){
+                            display: none;
+                        }     
+                    }
+                    a{
+                        color: $text-clr-6;
+                        font-size: 0.75rem;
+                        font-weight: bold;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        &-body{
+            margin-top: 60px;
+            &-content:first-child{
+                .coin-content{
+                    border-top: 1px solid $border-clr;
+                }
+            }
+            &-content{              
+                .coin-content{
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 1px solid $border-clr;
+                    padding: 13px max((100% - 1200px)/2,48px);
+                    @include BootstrapMaxWidthResponsive(xm){
+                        padding: 13px 16px;
+                    }
+                    cursor: pointer;
+                    .profile{
+                        width: 37.5%;
+                        display: flex;
+                        align-items: center;
+                            @include BootstrapMaxWidthResponsive(xs){    
+                                width: 50%;   
+                            }
+                        .favorite-button{
+                            display: flex;
+                            align-items: center;
+                            color: $border-clr;
+                            cursor: pointer;    
+                        }
+                        .rank{
+                            color: $text-clr-3;
+                            font-size: 0.6875rem;
+                            font-weight: bold;
+                            min-width: 23px;
+                            margin-right: 8px;
+                            text-align: center;
+                            @include BootstrapMaxWidthResponsive(xs){
+                                font-size: 0.625rem;
+                            }
+                        }
+                        img{
+                            margin-right: 11px;
+
+                        }
+                        .names{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            .name{
+                                color: $text-clr-2 ;
+                                font-size: 0.875rem;
+                                font-weight: bold;
+                                margin-bottom: 7px;
+                                @include BootstrapMaxWidthResponsive(xs){
+                                    font-size: 0.75rem;
+                                }
+                            }
+                            .symbol{
+                                color: $text-clr-2 ;
+                                font-size: 0.825rem;
+                                font-weight: 500;
+                                @include BootstrapMaxWidthResponsive(xs){
+                                    font-size: 0.6725rem;
+                                }
+                            }
+                        }
+                        
+                        
+                    }
+                    .price,.marketcap{
+                        width: 25%;
+                       
+                    }
+                    .price{
+                        .secret-marketcap{
+                            display: none;
+                        }
+                        @include BootstrapMaxWidthResponsive(xs){
+                            font-size: 0.75rem !important;
+                           
+                            .secret-marketcap{
+                                display: block;
+                                font-weight: 500;
+                                margin-top: 7px;
+                            }
+                        }
+                    }
+                    .profile,.price,.marketcap{
+                        text-align: start;
+                        padding-left: 8px;
+                    }
+                    .price,.marketcap{
+                        color: $text-clr-2;
+                        font-size: 0.875rem;
+                        font-weight: bold;
+                        letter-spacing: 0.35px;
+                    }
+                    .hours{
+                        color: $bg-clr-5;
+                        font-size: 0.8125rem;
+                        font-weight: bold;
+                        letter-spacing:  0.325px;
+                        padding-right: 8px;
+                        width: 12.5%;
+                        text-align: end;
+                        @include BootstrapMaxWidthResponsive(xs){    
+                            width: 25%;
+                            font-size:0.675rem;
+                        }
+                        .plus{
+                            color: $bg-clr-5;
+                        }
+                        .minus{
+                            color: $bg-clr-6;
+                        }
+                        
+                    }
+                    .marketcap{
+                        @include BootstrapMaxWidthResponsive(xs){    
+                            display: none;   
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .paginationn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0 45px;
+        &-button{
+            &-back,&-next{
+                display: inline;
+                padding: 3px 20px;
+                border-radius: 50px;
+                margin: 0 25px;
+                display: flex;
+                align-items: center;
+                @include BootstrapMaxWidthResponsive(xs){
+                    padding:0;
+                    border-radius: 5px;
+                }
+            }
+            &-back{
+                background-color: #fff;
+                border: 2px solid $border-clr-2;
+                color: $text-clr-7;
+                cursor: auto;
+            }
+            &-next{
+                background-color: $bg-clr-11;
+                border: 2px solid $bg-clr-11;
+                color: white;
+                cursor: pointer;
+            }
+        }
+        &-list{
+            display: flex;
+            
+            a{
+                padding: 8px 12px;
+                margin: 0 1px;
+                border-radius: 4px;
+                text-align: center;
+                line-height: 1.2;
+                font-size: 0.875rem;
+                font-weight: bold;
+                color: $text-clr-2;
+                &:hover{
+                    color: $text-clr-2;
+                    background: $border-clr;
+                }
+                @include BootstrapMaxWidthResponsive(xs){
+                   font-size: 0.75rem;
+                }
+            }
+            .first-page{
+                background-color: $text-clr-2 !important;
+                color: white !important;
+            }
+        }
+        &-separator{
+            width: 1px;
+            height: 15px;
+            align-self: center;
+            margin: 0 1px;
+            background-color: $bg-clr-12;
+        }
+    }
+    .content-section{
+        display: flex;
+        max-width: 1250px;
+        margin: 20px auto 70px;
+        padding: 0 52px;
+        @include BootstrapMaxWidthResponsive(xs){
+            padding: 0 10px;
+        }
+       
+        @include BootstrapMaxWidthResponsive(md){
+            flex-direction: column;
+            flex-flow: column-reverse;
+        }
+        &-article{
+            color: $text-clr-2;
+            flex-grow: 1;
+            .description{
+                .title{
+                    font-size: 1.4375rem;
+                    font-weight: bold;
+                    margin: 38px 0 16px;
+                    line-height: 1.5;
+                }
+                p{
+                    font-size: 0.95rem;
+                    font-weight: 500;
+                    line-height: 1.8;
+                    margin: 10px 0 25px;
+                }
+            }
+            .page-faq{
+                color: $text-clr-3 ;
+                
+                .title{
+                    font-size: 1.125rem ;
+                    font-weight: bold;
+                    margin: 28px 0 ;
+                }
+                .faq:first-of-type{    
+                    border-top: 1px solid $border-clr ;
+                }
+                .faq{
+                    border-bottom: 1px solid $border-clr ;
+                    .accordion{
+                        &-header{
+                            button{
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                padding: 16px 14px 16px 0;
+                                color: $text-clr-2 ;
+                                font-size: 0.95rem;
+                                font-weight: bold;
+                            }
+                        }
+                        &-collapse{
+                            position: relative;
+                            box-shadow: none;
+                            p{
+                                margin: 10px 0 25px;
+                                color: $text-clr-2 ;
+                                font-size: 0.95rem;
+                                line-height: 1.8;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        &-aside{
+            max-width: 480px;
+            padding-left: 80px;
+            @include BootstrapMaxWidthResponsive(md){
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+                margin: auto;
+            }
+            .highlight-coins{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                margin: 20px auto 70px;
+
+                @include BootstrapMaxWidthResponsive(md){
+                    width: 100%;
+                    max-width: 100%;
+                }
+                &-winners,&-losers,&-renews{
+                    width: 400px;
+                    max-width: 400px;
+                    margin-bottom: 40px;
+                    @include BootstrapMaxWidthResponsive(md){
+                        max-width: 100%;
+                        width: 100%;
+                    }
+                    .highlight-info{
+                        color: $text-clr-2;
+                        
+                        .title{   
+                            font-size: 1.125rem;
+                            font-weight: bold;
+                            margin: 15px 0;
+                        }
+                        .description{
+                            font-weight: 500;
+                            font-size: 0.875rem;
+                            margin-bottom: 21px;
+                            line-height: 1.8;
+                        }
+                    }
+                    .table-head{
+                        border: 0;
+                        &-titles{
+                            padding: 10px 0;
+                            @include BootstrapMaxWidthResponsive(md){
+                                .title:first-child,.title:nth-child(2){
+                                    padding-left: 8px;
+                                }
+                                .title:last-child{
+                                    padding-right: 12px;
+                                    @include BootstrapMaxWidthResponsive(xs){
+                                    display: block !important;
+                                    }
+                                }
+                            }
+                            .title:first-child{
+                                width: 50%;
+                                span{
+                                    margin-right: 12px;
+                                    margin-left: 31px;
+                                }
+                            }
+                            .title:nth-child(2),.title:last-child{
+                                width: 25%;
+                            }
+                        }
+                    }
+                    .table-body{
+                        margin-top: 0 !important;
+                        .coin-content:last-child{
+                            border-bottom: 0;
+                        }
+                        .coin-content{
+                            padding: 10px 0;
+                            
+                            .profile{
+                                width: 50%;
+                            }
+                            .price,.hours{
+                                width: 25%;
+                            }
+                        }
+                    }
+                    .more{
+                        width: 100%;
+                        display: block;
+                        text-align: center;
+                        color: $text-clr-3;
+                        border: 0.07rem solid $border-clr-3;
+                        font-weight: bold;
+                        font-size: 0.8125rem;
+                        padding: 8px 15px;
+                        border-radius: 5px;
+                        &:hover{
+                            border-color: $border-clr-2;
+                        }
+                    }
+        
+                }
+                
+            }
+        }
+    }
+    .advert-api-promotion{
+        padding: 30px 0;
+        .advertisings-space{
+            display: flex;
+            justify-content: center;
+            margin: 20px 0 30px;
+            .advertisings{
+                a{
+                    color: $bg-clr-11;
+                    font-weight: 500;
+                    letter-spacing: 0.39px;
+                    padding: 0 17px 5px;
+                    font-weight: 500;
+                    font-size: 0.8125rem;
+                }
+                &-holder{
+                    width: 728px;
+                    height: 90px;
+                    background-color: $border-clr;
+                    margin-top: 5px;
+                    @include BootstrapMaxWidthResponsive(sm){
+                        width: 420px;
+                        max-width: 420px;
+                    }
+                }
+            }
+        }
+        .api-promotion{
+            margin: 0 auto;
+            max-width: 1634px;
+            &-block{
+                display: flex;
+                border-radius: 8px;
+                margin: 52px;
+                justify-content: space-between;
+                align-items: stretch;
+                background-color: $bg-clr-13;
+                @include BootstrapMaxWidthResponsive(sm){
+                    margin: 52px 0;
+                }
+                @include BootstrapMaxWidthResponsive(xl){
+                    flex-direction: column;
+                }
+                &-left{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 30px 62px;
+                    border-right: 1px solid $border-clr;
+                    a{
+                        display: flex;
+                        align-items: center;
+                        color:$text-clr-2;
+                        font-size: 1.375rem;
+                        font-weight: 600;
+                        @include BootstrapMaxWidthResponsive(sm){
+                            font-size: 0.95rem;
+                        }
+                    }
+                }
+                &-right{
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 5px 30px 9px;
+                    @include BootstrapMaxWidthResponsive(sm){
+                        padding:  0;
+                    }
+                    @include BootstrapMaxWidthResponsive(xl){
+                        flex-direction: column;
+                    }
+                    .info{
+                        flex: 1;
+                        text-align: center;
+                        color:$text-clr-2;
+                        font-size: 1.125rem;
+                        font-weight: bold;
+                        padding: 20px 32px;
+                        min-width: 300px;
+                        @include BootstrapMaxWidthResponsive(sm){
+                            font-size: 1rem;
+                        }
+                    }
+                    .bttns{
+                        padding: 10px 22px;
+                        text-align: center;
+                        .apidoc,.apikey{
+                            margin: 10px;
+                            padding: 15px 32px;
+                            font-weight: bold;
+                            letter-spacing: 0.56px;
+                            font-size: 0.875rem;
+                            border-radius: 50px;
+                            @include BootstrapMaxWidthResponsive(sm){
+                                font-size: 0.75rem;
+                            }
+                        }
+                        .apidoc{         
+                            background-color: $bg-clr-14;
+                            color: $text-clr-2;
+                        }
+                        .apikey{
+                            background-color: $text-clr-2;
+                            color: #fff;
+                            &:hover{
+                                opacity: .95;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

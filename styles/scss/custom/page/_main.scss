@@ -1,0 +1,182 @@
+.coins{
+    background-color: $bg-clr-7;
+    padding: 20px 0;
+    .action-bar{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 40px;
+        &-wrapper{
+            display: inline-block;
+            @include BootstrapMaxWidthResponsive(md){
+                display: block;
+                width: 100%;  
+            } 
+            .action-options{
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                color: $text-clr-3;
+                font-size: 0.75rem;
+                font-weight: 700;
+                border: 1px solid $border-clr;
+                border-radius: 4px;
+                .item{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                }
+                .item:not(:last-child){
+                    border-right: 1px solid $border-clr;
+                }
+                .currency, .hours, .lang{             
+                    flex-grow: 1;
+                    span{
+                        margin-right: 8px;
+                    }
+                }
+                .theme, .share{
+                    height: 34px;
+                    width: 36px;
+                    background-color: transparent;
+                    outline: none;
+                }         
+                .currency{
+                    .accordion{
+                        .accordion-collapse{
+                            width: 380px;
+                            left: -153px;
+                            top: 45px;
+                            @include BootstrapMaxWidthResponsive(md){                          
+                                left: 0 !important;
+                            } 
+                            .accordion-body{
+                                input{
+                                    border-radius: 0;
+                                    font-size: 0.8125rem;
+                                    font-weight: 500;
+                                    color: $text-clr-2;
+                                    line-height: 1.4;
+                                    height: 62px;
+                                    width: 100%;
+                                    padding: 2px 62px 0;
+                                    display: block;
+                                    border: none;
+                                    &::placeholder{
+                                        color: $text-clr-3 ;
+                                    }
+                                }
+                                > svg{
+                                    position: absolute;
+                                    top: 24px;
+                                    left: 35px;
+                                    color: $text-clr-2;
+                                }
+                                .search-blocks{
+                                    .search-title{
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+                                        width: 100%;
+                                        font-size: 0.625rem;
+                                        padding: 0 29px;
+                                    }
+                                    .search-results{
+                                        width: 100%;
+                                        padding-top: 9px;
+                                        .result-item:first-child{
+                                            font-weight: bold;
+                                        }
+                                        .result-item{
+                                            width: 100%;
+                                            padding: 8px 36px;
+                                            color: $text-clr-3;
+                                            font-size: 0.8125rem;
+                                            font-weight: 500;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .hours{
+                    .accordion-collapse{
+                        width: 200px;
+                        left: -60px;
+                        top: 45px;
+                    }
+                    .result-item{
+                        padding: 8px 36px;
+                    }
+                }
+                .lang{
+                    .accordion-collapse{
+                        width: 210px;
+                        left: -142px;
+                        top: 45px;
+                        .result-item{
+                            padding: 8px 0px 8px 36px !important;        
+                        }
+                    }
+                }
+                .hours,.lang,.currency{
+                    .accordion{
+                        @include BootstrapMaxWidthResponsive(md){                          
+                            width: 100%;  
+                        } 
+                        .accordion-header{
+                            button{
+                                color: $text-clr-3;
+                                font-size: 0.75rem;
+                                font-weight: 700;
+                                padding: 9px 15px 9px 19px;
+                                display: block;
+                                @include BootstrapMaxWidthResponsive(md){
+                                    width: 100%;  
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                } 
+                            }
+                        }
+                        .accordion-collapse{
+                            // max-height: 282px;
+                            // overflow-y: auto;
+                            @include BootstrapMaxWidthResponsive(md){                          
+                                left: 41px;
+                            } 
+                            .accordion-body{
+                                position: relative;
+                                .search-blocks{
+                                    padding: 0 0 23px;
+                                    .search-results{
+                                        width: 100%;
+                                        padding-top: 9px;
+                                        .result-item:first-child{
+                                            font-weight: bold;
+                                        }
+                                        .result-item{
+                                            width: 100%;
+                                            color: $text-clr-3;
+                                            font-size: 0.8125rem;
+                                            font-weight: 500;
+                                            &:hover{
+                                                background-color: $bg-clr-8;
+                                                cursor: pointer;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .coinlist{
+        
+    }
+}
