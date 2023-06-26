@@ -6,7 +6,7 @@ async function getData(){
 
   try{
 
-    const res = await fetch(`https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?${process.env.COIN_API_KEY}`)
+    const res = await fetch(`https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=f133ccfd-fa6e-48c3-8816-181fc0d2bad6`)
     
     if(!res.ok){
       throw new Error(`Error status: ${res.status}`)
