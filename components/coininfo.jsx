@@ -3,12 +3,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Accordion } from 'react-bootstrap'
-
-import info from '../public/svg/info.svg'
 import {BiSearch} from 'react-icons/bi'
 import {FaSortAmountDown} from 'react-icons/fa'
+import Info from '../public/svg/info.svg'
+
 
 const CoinInfo = () => {
+
   return (
     <div className='stats'>
         <div className="stats-head">
@@ -22,7 +23,7 @@ const CoinInfo = () => {
                         <span>
                             Market cap     
                         </span>      
-                        <Image src={info} alt="ok" />
+                        <Image src={Info} alt='info' />
                     </div>
                     <div className="item-value">
                         <abbr title="1,027,408,169,158">$ 1.03 trillion</abbr>
@@ -34,7 +35,7 @@ const CoinInfo = () => {
                         <span>
                             Gainers vs Losers   
                         </span>      
-                        <Image src={info} alt="ok" />
+                        <Image src={Info} alt='info' />
                     </div>
                     <div className="item-value">
                         <div className="w-vs-l">
@@ -52,11 +53,10 @@ const CoinInfo = () => {
                         <span>
                             Trading volume    
                         </span>      
-                        <Image src={info} alt="ok" />
+                        <Image src={Info} alt='info' />
                     </div>
                     <div className="item-value">
-                        <abbr title="1,027,408,169,158">$ 32.64 billion</abbr>
-                        
+                        <abbr title="1,027,408,169,158">$ 32.64 billion</abbr>        
                     </div>
                 </li>
                 <li  className='stat-bar-item'>
@@ -64,7 +64,7 @@ const CoinInfo = () => {
                         <span>
                             BTC dominance     
                         </span>      
-                        <Image src={info} alt="ok" />
+                        <Image src={Info} alt='info' />
                     </div>
                     <div className="item-value">
                         <p>46.5%</p>
@@ -75,7 +75,7 @@ const CoinInfo = () => {
                         <span>
                             All coins     
                         </span>      
-                        <Image src={info} alt="ok" />
+                        <Image src={Info} alt='info' />
                     </div>
                     <div className="item-value">
                         <p title="1,027,408,169,158">26,417</p>
@@ -94,148 +94,146 @@ const CoinInfo = () => {
                         <label htmlFor="toggle" className='closed' />
                     </div>
             </div>
-           
-                <div className="rank-list">
-                    <Accordion defaultActiveKey="0">
-                        <Accordion.Item eventKey="1">
-                            <Accordion.Header><FaSortAmountDown size={17} /> </Accordion.Header>
-                            <Accordion.Body>
-                                <div className="info">
-                                    Choose ranking
-                                </div>
-                                <ul className='items'>
-                                    <li className='item'>
-                                        Market cap
-                                    </li>
-                                    <li className='item'>
-                                        Trading volume
-                                    </li>
-                                    <li className='item'>
-                                        Highest price
-                                    </li>
-                                    <li className='item'>
-                                        Lowest price
-                                    </li>
-                                    <li className='item'>
-                                        Best performing
-                                    </li>
-                                    <li className='item'>
-                                        wost performing
-                                    </li>
-                                </ul>
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </Accordion>
-                </div>
-                <div className="options">
-                    <ul className='options-items'>
-                        <li className='option-item'>
-                            <Link href={"https://www.youtube.com/"}>
-                                All
-                            </Link>
-                        </li>
-                        <li className='option-item'>
-                            <Link href={"https://www.youtube.com/"}>
-                                Favorites
-                            </Link>
-                        </li>
-                        <li className='option-item'>
-                            <Link href={"https://www.youtube.com/"}>
-                                New
-                            </Link>
-                        </li>
-                        <li className='option-item'>
-                            <Link href={"https://www.youtube.com/"}>
-                                Gainers
-                            </Link>
-                        </li>
-                        <li className='option-item'>
-                            <Link href={"https://www.youtube.com/"}>
-                                Losers
-                            </Link>
-                        </li>
-                        <li className='option-item'>
-                            <Link href={"https://www.youtube.com/"}>
-                                BRC-20
-                            </Link>
-                        </li>
-                        <li className='option-item'>
-                            <Link href={"https://www.youtube.com/"}>
-                                SRC-20
-                            </Link>
-                        </li>
-                        <li className='option-item'>
-                            <Link href={"https://www.youtube.com/"}>
-                                ORC-20
-                            </Link>
-                        </li>
-                        <li className='option-item'>
-                            <Link href={"https://www.youtube.com/"}>
-                                Meme
-                            </Link>
-                        </li>
-                        <li className='option-item'>
-                            <Link href={"https://www.youtube.com/"}>
-                                Layer-1
-                            </Link>
-                        </li>
-                        <li className='option-item'>
-                            <Link href={"https://www.youtube.com/"}>
-                                AI
-                            </Link>
-                        </li>
-                        <li className='option-item'>
-                            <Link href={"https://www.youtube.com/"}>
-                                Exchange
-                            </Link>
-                        </li>
-                        <li className='option-item'>
-                            <Link href={"https://www.youtube.com/"}>
-                                Layer-2
-                            </Link>
-                        </li>
-                        <li className='option-item'>
-                            <Link href={"https://www.youtube.com/"}>
-                                Web3
-                            </Link>
-                        </li>
-                        <li className='option-item '>
-                            <div className='more'>
-                                <Accordion defaultActiveKey="0">
-                                    <Accordion.Item eventKey="1">
-                                        <Accordion.Header>+17 more</Accordion.Header>
-                                        <Accordion.Body>
-                                        <div className="info">
-                                            Choose ranking
-                                        </div>
-                                        <ul className='items'>
-                                            <li className='item'>
-                                                Market cap
-                                            </li>
-                                            <li className='item'>
-                                                Trading volume
-                                            </li>
-                                            <li className='item'>
-                                                Highest price
-                                            </li>
-                                            <li className='item'>
-                                                Lowest price
-                                            </li>
-                                            <li className='item'>
-                                                Best performing
-                                            </li>
-                                            <li className='item'>
-                                                wost performing
-                                            </li>
-                                        </ul>
-                                        </Accordion.Body>
-                                    </Accordion.Item>
-                                </Accordion>
+            <div className="rank-list">
+                <Accordion defaultActiveKey="0">
+                    <Accordion.Item eventKey="1">
+                        <Accordion.Header><FaSortAmountDown size={17} /> </Accordion.Header>
+                        <Accordion.Body>
+                            <div className="info">
+                                Choose ranking
                             </div>
-                        </li>
-                    </ul>
-                </div>
-            
+                            <ul className='items'>
+                                <li className='item'>
+                                    Market cap
+                                </li>
+                                <li className='item'>
+                                    Trading volume
+                                </li>
+                                <li className='item'>
+                                    Highest price
+                                </li>
+                                <li className='item'>
+                                    Lowest price
+                                </li>
+                                <li className='item'>
+                                    Best performing
+                                </li>
+                                <li className='item'>
+                                    wost performing
+                                </li>
+                            </ul>
+                        </Accordion.Body>
+                    </Accordion.Item>
+                </Accordion>
+            </div>
+            <div className="options">
+                <ul className='options-items'>
+                    <li className='option-item'>
+                        <Link href='/'>
+                            All
+                        </Link>
+                    </li>
+                    <li className='option-item'>
+                        <Link href='/'>
+                            Favorites
+                        </Link>
+                    </li>
+                    <li className='option-item'>
+                        <Link href='/'>
+                            New
+                        </Link>
+                    </li>
+                    <li className='option-item'>
+                        <Link href='/'>
+                            Gainers
+                        </Link>
+                    </li>
+                    <li className='option-item'>
+                        <Link href='/'>
+                            Losers
+                        </Link>
+                    </li>
+                    <li className='option-item'>
+                        <Link href='/'>
+                            BRC-20
+                        </Link>
+                    </li>
+                    <li className='option-item'>
+                        <Link href='/'>
+                            SRC-20
+                        </Link>
+                    </li>
+                    <li className='option-item'>
+                        <Link href='/'>
+                            ORC-20
+                        </Link>
+                    </li>
+                    <li className='option-item'>
+                        <Link href='/'>
+                            Meme
+                        </Link>
+                    </li>
+                    <li className='option-item'>
+                        <Link href='/'>
+                            Layer-1
+                        </Link>
+                    </li>
+                    <li className='option-item'>
+                        <Link href='/'>
+                            AI
+                        </Link>
+                    </li>
+                    <li className='option-item'>
+                        <Link href='/'>
+                            Exchange
+                        </Link>
+                    </li>
+                    <li className='option-item'>
+                        <Link href='/'>
+                            Layer-2
+                        </Link>
+                    </li>
+                    <li className='option-item'>
+                        <Link href='/'>
+                            Web3
+                        </Link>
+                    </li>
+                    <li className='option-item '>
+                        <div className='more'>
+                            <Accordion defaultActiveKey="0">
+                                <Accordion.Item eventKey="1">
+                                    <Accordion.Header>+17 more</Accordion.Header>
+                                    <Accordion.Body>
+                                    <div className="info">
+                                        Choose ranking
+                                    </div>
+                                    <ul className='items'>
+                                        <li className='item'>
+                                            Market cap
+                                        </li>
+                                        <li className='item'>
+                                            Trading volume
+                                        </li>
+                                        <li className='item'>
+                                            Highest price
+                                        </li>
+                                        <li className='item'>
+                                            Lowest price
+                                        </li>
+                                        <li className='item'>
+                                            Best performing
+                                        </li>
+                                        <li className='item'>
+                                            wost performing
+                                        </li>
+                                    </ul>
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+                        </div>
+                    </li>
+                </ul>
+            </div>       
         </div>
     </div>
   )

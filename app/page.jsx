@@ -1,12 +1,13 @@
-import Coins from "@/components/coins"
-
-
+import ActionBar from "../components/actionbar"
+import Coinlist from "../components/coinlist"
 
 
 const HomePage = () => {
+
   return (
-    <div>
-      <Coins />
+    <div className="coins">
+      <ActionBar />
+      <Coinlist />
     </div>
   )
 }

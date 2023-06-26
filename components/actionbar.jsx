@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+
 import Accordion from 'react-bootstrap/Accordion';
 import {BsChevronDown,BsMoonFill} from 'react-icons/bs'
 import {BiSearch} from 'react-icons/bi'
